@@ -4,6 +4,6 @@ workflow "New workflow" {
 }
 
 action "Create PR Comment" {
-  uses = "alpine:latest"
+  uses = "../dockerfile"
   secrets = ["GITHUB_TOKEN"]
 }
