@@ -4,6 +4,6 @@ workflow "PR Checklist" {
 }
 
 action "Create PR Comment" {
-  uses = "./add-checklist"
+  uses = "."
   secrets = ["GITHUB_TOKEN"]
 }
