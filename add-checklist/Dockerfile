@@ -8,4 +8,8 @@ RUN apk add --no-cache \
     curl \
     git
 COPY "add-checklist.sh" /usr/bin/add-checklist
+COPY "jqprogram.jq" /usr/bin/jqprogram.jq
+COPY "postTemplate.json" /usr/bin/postTemplate.json
+COPY "../checklist.md" /usr/bin/checklist.md
+
 CMD ["sh", "/usr/bin/add-checklist"]
