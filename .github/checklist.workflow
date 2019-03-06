@@ -4,6 +4,6 @@ workflow "New workflow" {
 }
 
 action "Create PR Comment" {
-  uses = "dockerfile"
+  uses = "./add-checklist"
   secrets = ["GITHUB_TOKEN"]
 }
