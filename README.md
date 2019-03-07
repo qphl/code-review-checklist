@@ -6,9 +6,9 @@ This repository contains a checklist of common issues to be used when conducting
 
 The checklist can be found in [checklist.md](./checklist.md). If you would like to suggest changes, please submit a pull request to this repository.
 
-# Github Action
+# GitHub Action
 
-To set up the github action in a new repository, create a folder named `.github` in the repository root, and inside create a file named `main.workflow`. (If the repository already has actions set up then skip this step, the file will already exist.
+To set up the github action in a new repository, create a folder named `.github` in the repository root, and inside create a file named `main.workflow`. (If the repository already has actions set up then skip this step, the file will already exist.)
 
 Add the following to the workflow file.
 
