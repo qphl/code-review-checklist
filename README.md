@@ -31,4 +31,7 @@ action "Create PR Comment" {
 This creates an action named `Create PR Comment`, and the `uses` statement instructs github actions to find and run the [Dockerfile](./Dockerfile) in this repository. If you would like to pin the action to a specific commit, you can replace `@master` with a commit hash or tag. The line `secrets = ["GITHUB_TOKEN"]` supplies a token into the dockerfile which will allow the scripts inside the container to access the GitHub API.
 
 Finally save the workflow, and whenever a Pull Request is created in the repository a comment will be automatically posted containing the contents of [checklist.md](./checklist.md).
+
+![screenshot 2019-03-06 at 15 38 39](https://user-images.githubusercontent.com/548432/53967984-234aa780-40ee-11e9-9474-6c67ac39a70b.png)
+
 NOTE: The workflow will only execute for pull requests on branches which contain `.github/main.workflow`, so any existing branches will need to be updated if you have made these changes on master.
