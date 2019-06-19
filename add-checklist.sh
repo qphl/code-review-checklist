@@ -2,6 +2,10 @@
 set -e
 set -o pipefail
 
+if [[ $(jq '.action != "opened"' "$GITHUB_EVENT_PATH") = "true" ]]; then
+  exit 0  
+fi
+
 URI=https://api.github.com
 API_VERSION=v3
 API_HEADER="Accept: application/vnd.github.${API_VERSION}+json; application/vnd.github.antiope-preview+json"
