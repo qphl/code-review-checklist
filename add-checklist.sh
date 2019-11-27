@@ -4,8 +4,7 @@ set -o pipefail
 
 if [[ $(jq '.action != "opened"' "$GITHUB_EVENT_PATH") = "true" ]]; then
   echo "Ignoring irrelevant event, PR is already open so comment will already have been posted."
-  # 78 tells github actions this is a "neutral" exit (neither good nor bad).
-  exit 78
+  exit 0
 fi
 
 URI=https://api.github.com
