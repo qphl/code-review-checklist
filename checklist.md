@@ -1,13 +1,17 @@
-## Pull Request Review Checklist:
+## Before Reviewing Any Code:
 
-- [ ] Variable have been given sensible, meaningful names.
-- [ ] LINQ to SQL datacontexts must always be initialised with an explicit connection string drawn from a config file.
-- [ ] Code is DRY (Dont Repeat Yourself). (But make sure where this is applied, the two things are actually the same!)
-- [ ] No values have been hard-coded where they should be drawn from a config file.
-- [ ] Comments are present where appropriate, and provide useful information not just stating what the code is obviously doing.
-- [ ] Error handling is performed appropriately where things might fail.
-- [ ] Logging is present, useful, and uses log levels appropriately.
-- [ ] If new app config values are referenced in the code, a placeholder must be committed in the config file.
-- [ ] If new app config values are referenced in the code, they must be added to octopus before approving this PR.
-- [ ] For projects with snapshotting, any new fields added to viewmodels must declare datamembers appropriately.
-- [ ] For projects with snapshotting, any new viewmodels should be added to the snapshot load/save code in the bootstrapper.
+- [ ] Make sure the Jira card is properly linked to the PR.
+- [ ] Read and understand the Jira card, requirements, and card conversation. If something is not clear, reach out to whoever you need to to get clarity (i.e. an SME, the reporter of the card, a PM, etc)
+- [ ] Read and understand the PR original post and existing conversation on the PR.
+- [ ] If there is no media attached to support that the new code works in the application, ask the author if they tested it in the application and to please attach proof of functionality when applicable.
+- [ ] Make sure their CI build has passed.
+
+## Reviewing The Code:
+
+- [ ] Make sure there are thorough specs/tests
+- [ ] Carefully review the code to make sure it meets all of the product requirements on the Jira card including any checklist items.
+- [ ] Common suggestions may include improvements in performance, DRYing up code, architecture improvements, use of best practices, etc.
+- [ ] If you have some ideas about an improvement that can be made, but it's something that can be addressed later, feel free to comment anyway, e.g. "not blocking merge, but module A could probably be merged with module B, do you think we should make a card to follow up?"
+- [ ] Consider utilizing tooling to evaluate the code. For example, you could run code locally and use it as the end user would, or test on staging. Double check requests in feature’s description.
+- [ ] Make sure all files are properly named (this is particularly important when functionality relies on file names, such as specs or mailers) and there are no typos throughout the code.
+- [ ] Once you are done reviewing, whether approved or not, Slack the author to let them know you are done reviewing. A simple "done" or "lgtm" (looks good to me) is fine.
